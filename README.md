@@ -46,7 +46,7 @@ cd /root/
 git clone https://github.com/PUQ-sp-z-o-o/PUQ_WHMCS-nextcloud.git
 cd PUQ_WHMCS-nextcloud/
 ```
-Edit PUQ_nextclous_api.py 
+Edit PUQ_nextcloud_api.py 
 ```
 In WHMCS is $params['customfields']['Api key'] on product
 api_key = '**************************************'
