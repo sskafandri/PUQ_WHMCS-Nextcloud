@@ -8,6 +8,7 @@
  +-----------------------------------------------------------------------------------------+
  | Author: Ruslan Poloviy ruslan.polovyi@puq.pl                                            |
  | Warszawa 03.2021 PUQ sp. z o.o. www.puq.pl                                              |
+ | version: 1.1                                                                            |
  +-----------------------------------------------------------------------------------------+
 """
 import fcntl, sys, os
@@ -24,11 +25,11 @@ except IOError:
     sys.exit(0)
 print('Starting...')
 sleep(2)
-
+########################################################################################################################
 #In WHMCS is $params['customfields']['Api key'] on product
-api_key = '5e84ae87e2dbdf9a517c0d08fda8cf3f'
+api_key = 'API-KEY'
 # In WHMCS is $params['serverip']
-remote_ip = '109.232.240.131'
+remote_ip = 'WHMCS-IP'
 
 nc = PUQ_nextcloud(api_key, remote_ip)
 # Optional
