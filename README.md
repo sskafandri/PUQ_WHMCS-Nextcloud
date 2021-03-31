@@ -27,7 +27,7 @@ WHMCS: 8.1.0
 NextClous: 21.0.0
 
 --------------------------------------------------------------
-# WHMCS part setup guide
+### WHMCS part setup guide
 1. Create a new "modules/servers/puqNextcloud" folder on serwer WHMCS. Download and place the "puqNextcloud.php" in this folder.
 
 2. Create new server in WHMCS (System Settings->Products/Services->Servers) 
@@ -43,7 +43,7 @@ Create and accepted order on this product. Set Api key (strong)
 Deploy server Nextcloud for this produkt.
  
 -------------------------------------------------------------
-# NextCloud part setup guide
+### NextCloud part setup guide
 ```
 cd /root/ 
 git clone https://github.com/PUQ-sp-z-o-o/PUQ_WHMCS-nextcloud.git
