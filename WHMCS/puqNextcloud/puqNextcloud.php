@@ -7,6 +7,7 @@
  +-----------------------------------------------------------------------------------------+
  | Author: Ruslan Poloviy ruslan.polovyi@puq.pl                                            |
  | Warszawa 03.2021 PUQ sp. z o.o. www.puq.pl                                              |
+ | version: 1.1                                                                            |
  +-----------------------------------------------------------------------------------------+
 */
 function puqNextcloud_TerminateAccount($params) {
