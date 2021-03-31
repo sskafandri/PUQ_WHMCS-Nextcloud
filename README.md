@@ -19,10 +19,18 @@ Client area:
 - NextCloud Disk status
 --------------------------------------------------------------
 
-Create a new "modules/servers/puqNextcloud" folder on serwer WHMCS.
-
+1. Create a new "modules/servers/puqNextcloud" folder on serwer WHMCS.
 Download and place the "puqNextcloud.php" in this folder.
 
+2. Create new serwer in WHMCS (System Settings
+->Products/Services->Servers) 
+Set:
+-IP Address: LOCAL IP WHMCS Serwer
+-Module: PuqNextcloud
+3. Create a new Products/Services
+Set:
+-Module Settings/Module Name: PuqNextcloud
+-Custom Filds: Field Name(Api key),Field Type(Text Box),Mark(Admin Only)
 -------------------------------------------------------------
 
 
