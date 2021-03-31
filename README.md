@@ -52,6 +52,14 @@ In WHMCS is $params['customfields']['Api key'] on product
 api_key = '**************************************'
 In WHMCS is $params['serverip']
 remote_ip = '************************************'
+
+# Optional
+# nc.sudo = '/usr/bin/sudo'
+# nc.www_user = 'www-data'
+# nc.php = '/usr/bin/php'
+# nc.occ = '/var/www/nextcloud/occ'
+# nc.nextcloud_web_dir = '/var/www/nextcloud/'
+
 ```
 ```
 apt-get install python3-venv python3-pip -y
