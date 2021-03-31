@@ -62,5 +62,6 @@ pip3 install flask
 
 Add to crontab
 ```
-*/1 * * * * cd /root/PUQ_WHMCS-nextcloud && env/bin/python3 PUQ_nextclous_api.py
+*/1 * * * * cd /root/PUQ_WHMCS-nextcloud && env/bin/python3 PUQ_nextcloud_api.py
 ```
+
