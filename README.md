@@ -17,8 +17,14 @@ Admin area:
 Client area:
 - Change the NextCloud admin password
 - NextCloud Disk status
+---------------------------------------------------------------
+API port 3033 TCP
+Testing:
+WHMCS: 8.1.0
+NextClous: 21.0.0
+
 --------------------------------------------------------------
-#WHMCS part setup guide
+# WHMCS part setup guide
 1. Create a new "modules/servers/puqNextcloud" folder on serwer WHMCS. Download and place the "puqNextcloud.php" in this folder.
 
 2. Create new serwer in WHMCS (System Settings->Products/Services->Servers) 
@@ -30,15 +36,12 @@ Set:
 - Module Settings/Module Name: PuqNextcloud
 - Custom Filds: Field Name(Api key),Field Type(Text Box),Mark(Admin Only)
 -------------------------------------------------------------
-
-
-
+# NextCloud part setup guide
 ```
 cd /root/ 
 git clone https://github.com/PUQ-sp-z-o-o/PUQ_WHMCS-nextcloud.git
 cd PUQ_WHMCS-nextcloud/
 ```
-
 Edit PUQ_nextclous_api.py 
 ```
 In WHMCS is $params['customfields']['Api key'] on product
