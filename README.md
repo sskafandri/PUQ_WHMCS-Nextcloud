@@ -1,7 +1,8 @@
 # PUQ_WHMCS-nextcloud
 
-cd /root/
-git clone https://github.com/ruslanpolovyi/PUQ_WHMCS-nextcloud.git
+cd /root/ 
+
+https://github.com/PUQ-sp-z-o-o/PUQ_WHMCS-nextcloud.git
 cd PUQ_WHMCS-nextcloud/
 
 Edit in PUQ_nextclous_api.py 
