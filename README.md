@@ -17,6 +17,10 @@ Admin area:
 Client area:
 - Change the NextCloud admin password
 - NextCloud Disk status
+--------------------------------------------------------------
+
+
+
 
 
 ```
