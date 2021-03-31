@@ -10,8 +10,20 @@
  | Warszawa 03.2021 PUQ sp. z o.o. www.puq.pl                                              |
  +-----------------------------------------------------------------------------------------+
 """
+import fcntl, sys, os
+from time import sleep
+
 from flask import Flask, json, request
 from PUQ_nextclous_class import PUQ_nextcloud
+
+fp = open(os.path.realpath(__file__), 'r')
+try:
+    fcntl.flock(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except IOError:
+    print('My other copy is still working')
+    sys.exit(0)
+print('Starting...')
+sleep(2)
 
 #In WHMCS is $params['customfields']['Api key'] on product
 api_key = '5e84ae87e2dbdf9a517c0d08fda8cf3f'
