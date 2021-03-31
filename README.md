@@ -4,7 +4,8 @@ Module for the WHMCS system.
 For manage NextCloudab servers as a product.
 It is that each product is a separate intalation.
 
-Opportunities:
+Functions
+
 Admin area:
 - Suspend the services
 - Terminate the services
