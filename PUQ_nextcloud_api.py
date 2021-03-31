@@ -15,7 +15,7 @@ import fcntl, sys, os
 from time import sleep
 
 from flask import Flask, json, request
-from PUQ_nextclous_class import PUQ_nextcloud
+from PUQ_nextcloud_class import PUQ_nextcloud
 
 fp = open(os.path.realpath(__file__), 'r')
 try:
