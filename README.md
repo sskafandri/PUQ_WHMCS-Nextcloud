@@ -19,7 +19,11 @@ Client area:
 - NextCloud Disk status
 --------------------------------------------------------------
 
+Create a new "modules/servers/puqNextcloud" folder on serwer WHMCS.
 
+Download and place the "puqNextcloud.php" in this folder.
+
+-------------------------------------------------------------
 
 
 
