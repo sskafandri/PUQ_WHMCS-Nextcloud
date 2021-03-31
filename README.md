@@ -1,4 +1,23 @@
 # PUQ_WHMCS-nextcloud
+
+Module for the WHMCS system.
+For manage NextCloudab servers as a product.
+It is that each product is a separate intalation.
+
+Opportunities:
+Admin area:
+- Suspend the services
+- Terminate the services
+- Unsuspend the services
+- Change the NextCloud admin password
+- API connection status
+- NextCloud Disk status
+
+Client area:
+- Change the NextCloud admin password
+- NextCloud Disk status
+
+
 ```
 cd /root/ 
 git clone https://github.com/PUQ-sp-z-o-o/PUQ_WHMCS-nextcloud.git
