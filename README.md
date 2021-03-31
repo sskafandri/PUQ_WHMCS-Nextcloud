@@ -27,7 +27,7 @@ NextClous: 21.0.0
 # WHMCS part setup guide
 1. Create a new "modules/servers/puqNextcloud" folder on serwer WHMCS. Download and place the "puqNextcloud.php" in this folder.
 
-2. Create new serwer in WHMCS (System Settings->Products/Services->Servers) 
+2. Create new server in WHMCS (System Settings->Products/Services->Servers) 
 
 - IP Address: LOCAL IP WHMCS Serwer
 - Module: PuqNextcloud
