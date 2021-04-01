@@ -197,7 +197,7 @@ $code = '
 
     return $code;
 }
-
+/*
 function puqNextcloud_UsageUpdate($params) {
 
     $postvars = array(
@@ -231,7 +231,7 @@ function puqNextcloud_UsageUpdate($params) {
         "lastupdate"=>"now()",),array("server"=>$params['serverid'], "domain"=>$params['domain']));
 
 }
-/*
+*/
 function puqNextcloud_AdminServicesTabFields($params) {
 
     $postvars = array(
@@ -268,5 +268,5 @@ function puqNextcloud_AdminServicesTabFields($params) {
     );
     return $fieldsarray;
 }
-*/
+
 ?>
