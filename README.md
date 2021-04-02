@@ -1,4 +1,4 @@
-# PUQ_WHMCS-nextcloud
+# PUQ_WHMCS-Nextcloud
 
 Module for the WHMCS system.
 For manage NextCloudab servers as a product.
