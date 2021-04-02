@@ -46,7 +46,7 @@ Deploy server Nextcloud for this produkt.
 ### NextCloud part setup guide
 ```
 cd /root/ 
-git clone https://github.com/PUQ-sp-z-o-o/PUQ_WHMCS-nextcloud.git
+git clone https://github.com/PUQ-sp-z-o-o/PUQ_WHMCS-Nextcloud.git
 cd PUQ_WHMCS-nextcloud/
 ```
 Edit PUQ_nextcloud_api.py 
