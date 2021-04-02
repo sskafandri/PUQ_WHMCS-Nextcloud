@@ -10,6 +10,9 @@
  | version: 1.1                                                                            |
  +-----------------------------------------------------------------------------------------+
 */
+
+use Illuminate\Database\Capsule\Manager as DB;
+
 function puqNextcloud_TerminateAccount($params) {
     $postvars = array(
       'hash' => md5($params['serverip'].'|'.$params['customfields']['Api key']),
@@ -197,41 +200,58 @@ $code = '
 
     return $code;
 }
-/*
+
 function puqNextcloud_UsageUpdate($params) {
+  $servis = DB::table('tblhosting')
+  ->select('id', 'domain')
+  ->where('server', $params['serverid'])
+  ->where('domainstatus', 'Active')
+  ->get();
 
-    $postvars = array(
-      'hash' => md5($params['serverip'].'|'.$params['customfields']['Api key']),
+  foreach ($servis as $value){
+    $data = DB::table('tblcustomfieldsvalues AS t1')
+    ->leftJoin('tblcustomfields AS t2', 't1.fieldid', '=', 't2.id')
+    ->select('t1.value')
+    ->where('t2.type', 'product')
+    ->where('t2.fieldname', 'Api key')
+    ->where('t1.relid', $value->id)
+    ->first();
+    if (!is_null($data)) {
+      $fieldVal = $data->value;
+      $domain = $value->domain;
+      $api_key = $data->value;
+      $postvars = array(
+      'hash' => md5($params['serverip'].'|'.$data->value),
       'command' => 'UsageUpdate',
-    );
-    $postdata = http_build_query($postvars);
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, 'http://' . $params['domain'] . ':3033/');
-    curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
-    $answer = curl_exec($curl);
-    if(!$answer){
-      $result = 'API connection problem.';
-      return $result;
+      );
+      $postdata = http_build_query($postvars);
+      $curl = curl_init();
+      curl_setopt($curl, CURLOPT_URL, 'http://' . $domain . ':3033/');
+      curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+      curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+      curl_setopt($curl, CURLOPT_POST, true);
+      curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
+      $answer = curl_exec($curl);
+      if(!$answer){
+        $result = 'API connection problem.';
+        return $result;
+      }
+      $results = json_decode($answer, true);
+      if ($results['err'] != '0'){
+        return $results['error'];
+      }
+      update_query('tblhosting',array(
+      'diskusage'=>$results['msg']['used']/1000/1000,
+      'disklimit'=>$results['msg']['total']/1000/1000,
+      'bwusage'=>'0',
+      'bwlimit'=>'0',
+      'lastupdate'=>'now()',),array('server'=>$params['serverid'], 'domain'=>$domain));
     }
-    $results = json_decode($answer, true);
-    if ($results['err'] != '0'){
-      return $results['error'];
-    }
-
-        update_query("tblhosting",array(
-        "diskusage"=>$results['msg']['used']/1000/1000,
-        "disklimit"=>$results['msg']['total']/1000/1000,
-        "bwusage"=>"0",
-        "bwlimit"=>"0",
-        "lastupdate"=>"now()",),array("server"=>$params['serverid'], "domain"=>$params['domain']));
-
+  }
 }
-*/
+
 function puqNextcloud_AdminServicesTabFields($params) {
 
     $postvars = array(
